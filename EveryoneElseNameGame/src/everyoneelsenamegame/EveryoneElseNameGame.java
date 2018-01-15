@@ -11,7 +11,7 @@ public class EveryoneElseNameGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String theNames[] = {"Jon Lowrey","Mary Ozor", "Josh Aynes", "Michael File", "Cameron Llewellyn", "testing to show changes"};
+        String theNames[] = {"Jon Lowrey","Mary Ozor", "Josh Aynes", "Michael File", "Cameron Llewellyn", "Jeongin Park", "testing to show changes"};
         
         
         for(String S : theNames){
