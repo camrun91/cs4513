@@ -4,6 +4,9 @@ build/
 
 #netbeans specific
 /DungeonCrawl/nbproject/private
+/DungeonCrawl/nbproject/build-impl.xml
+/DungeonCrawl/nbproject/genfiles.properties
+
 
 
 #java specific
