@@ -19,10 +19,10 @@ import java.util.List;
 public class GameData {
     public static List<GameObject> gameObjects;
     public static Gamer gamer;
-    public static String level;
+    public static int level;
     public static int time;
-    public static String chipsLeft;
-    //public static Landscape landscape;
+    public static int chipsLeft;
+    private int timerCounter;
 
     public GameData() 
     {
@@ -31,31 +31,29 @@ public class GameData {
         // Level specific items
         gamer = new Gamer(650, 625);
         GameData.gameObjects.add(GameData.gamer);
-        GameData.level = "1";
-        GameData.time = 120000;
-        GameData.chipsLeft = "10";
+        GameData.level = 1;
+        GameData.time = 120;
+        GameData.chipsLeft = 10;
+        timerCounter = 0;
     }
     
     public void resetGameData()
     {
         GameData.gamer = new Gamer(650, 625);
         GameData.gamer.update();
-        
-//        if(landscape.getLevel() instanceof YouWinLevel)
-//        {
-//            hero.hearts += 6;
-//            
-//            Main.metricPanel.updateHeartsAndArrows();
-//        }
-//        
-//        landscape.setLevel(landscape.getLevel());
     }
     
     public void update() 
     {
         if(GameData.time > 0)
         {
-            GameData.time -= 1000;
+            if(timerCounter == 10){
+                timerCounter = 0;
+                GameData.time--;
+            }
+            else{
+                timerCounter++;
+            }
         }
         
         synchronized(gameObjects)

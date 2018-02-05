@@ -7,6 +7,7 @@ package view;
 
 import DungeonCrawl.DungeonCrawl;
 import controller.KeyController;
+import java.awt.Color;
 import javax.swing.GroupLayout;
 import javax.swing.JFrame;
 
