@@ -40,8 +40,8 @@ public class InventoryPanel extends JPanel
     public void updateInventoryPanel()
     {
         this.txtTime.setText(String.valueOf(GameData.time));
-        this.txtLevel.setText(String.valueOf(GameData.level));
-        this.txtChipsLeft.setText(String.valueOf(GameData.chipsLeft));
+        this.txtLevel.setText(GameData.level);
+        this.txtChipsLeft.setText(GameData.chipsLeft);
     }
     
     private void initComponents(){
@@ -62,23 +62,23 @@ public class InventoryPanel extends JPanel
 
         lblTime.setFont(new Font("Tahoma", 0, 36)); // NOI18N
         lblTime.setForeground(new Color(255, 0, 0));
-        lblTime.setText("TIME (s)");
+        lblTime.setText("TIME");
 
         lblChipsLeft.setFont(new Font("Tahoma", 0, 36)); // NOI18N
         lblChipsLeft.setForeground(new Color(255, 0, 0));
         lblChipsLeft.setText("CHIPS LEFT");
 
-        txtTime.setText(String.valueOf(GameData.time));
+        txtTime.setText(GameData.level);
         txtTime.setFont(new Font("Tahoma", 0, 36));
         txtTime.setHorizontalAlignment(JTextField.CENTER);
         txtTime.setEditable(false);
 
-        txtChipsLeft.setText(String.valueOf(GameData.chipsLeft));
+        txtChipsLeft.setText(GameData.chipsLeft);
         txtChipsLeft.setFont(new Font("Tahoma", 0, 36));
         txtChipsLeft.setHorizontalAlignment(JTextField.CENTER);
         txtChipsLeft.setEditable(false);
 
-        txtLevel.setText(String.valueOf(GameData.level));
+        txtLevel.setText(String.valueOf(GameData.time));
         txtLevel.setFont(new Font("Tahoma", 0, 36));
         txtLevel.setHorizontalAlignment(JTextField.CENTER);
         txtLevel.setEditable(false);

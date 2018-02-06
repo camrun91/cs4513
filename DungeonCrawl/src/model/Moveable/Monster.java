@@ -12,22 +12,35 @@ import java.awt.geom.Rectangle2D;
  *
  * 
  */
-public abstract class Monster extends MoveableObject {
+public class Monster extends MoveableObject {
 
     public Monster(float x, float y) {
         super(x, y);
     }
 
-    public abstract void render(Graphics g);
-
-    public boolean isAlive(){
-        return super.isAlive(); 
+    @Override
+    public void render(Graphics g) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public abstract Rectangle2D.Double getCollisionBox();
+    @Override
+    public boolean isAlive() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
-    public abstract void update();
+    @Override
+    public Rectangle2D.Double getCollisionBox() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
-    public abstract void findCollision();
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void findCollision() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
