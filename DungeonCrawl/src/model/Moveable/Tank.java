@@ -4,10 +4,14 @@
  * and open the template in the editor.
  */
 
+package model.Moveable;
+
+
 /**
  *
  * @author russe_000
  */
+
 package model.Moveable;
 
 import java.awt.Color;

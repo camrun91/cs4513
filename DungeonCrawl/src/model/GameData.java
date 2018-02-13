@@ -20,6 +20,7 @@ import model.Immoveable.Collectible.Chip;
 import model.Immoveable.Collectible.Key;
 import model.Immoveable.Tile.Lock;
 
+
 /**
  *
  * @author russe_000
@@ -40,12 +41,14 @@ public class GameData {
     public static int chipsLeft;
     private int timerCounter;
 
+
     public GameData() 
     {
         gameObjects = Collections.synchronizedList(new ArrayList<GameObject>());
         gamerInventory = Collections.synchronizedList(new ArrayList<GameObject>());
         
         // Level specific items
+
         gamer = new Gamer(2, 1);
         fireball = new Fireball (354,321); 
         tank = new Tank (706, 321);
@@ -84,6 +87,7 @@ public class GameData {
         gameObjects.add(new Chip(354, 97));
         gameObjects.add(new Chip(322, 97));
         gameObjects.add(new Chip(322, 129));
+
     }
     
     public void resetGameData()
@@ -100,13 +104,7 @@ public class GameData {
     {
         if(GameData.time > 0)
         {
-            if(timerCounter == 10){
-                timerCounter = 0;
-                GameData.time--;
-            }
-            else{
-                timerCounter++;
-            }
+            GameData.time -= 1000;
         }
         
         gamer.update();

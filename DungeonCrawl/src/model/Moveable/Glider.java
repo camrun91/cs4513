@@ -5,8 +5,10 @@
  */
 package model.Moveable;
 
+
 import java.awt.Color;
 import java.awt.Graphics2D;
+
 
 /**
  *
@@ -16,6 +18,7 @@ public class Glider extends Monster {
     public Glider(float x, float y) {
         super(x, y);
     }
+
 
     @Override
     public void render(Graphics2D g) {
@@ -35,4 +38,5 @@ public class Glider extends Monster {
     public void update() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }

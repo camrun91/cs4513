@@ -5,12 +5,14 @@
  */
 package model.Moveable;
 
+
 import static DungeonCrawl.DungeonCrawl.gameData;
 import controller.ImageFinder;
 import controller.ObjectAnimator;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+
 
 /**
  *
@@ -137,4 +139,5 @@ public class Ball extends Monster {
         }
         ballMoves.update();
     }
+
 }

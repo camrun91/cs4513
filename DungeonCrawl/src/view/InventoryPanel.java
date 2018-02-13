@@ -43,6 +43,7 @@ public class InventoryPanel extends JPanel
     public void updateInventoryPanel()
     {
         this.txtTime.setText(String.valueOf(GameData.time));
+
         this.txtLevel.setText(String.valueOf(GameData.level));
         this.txtChipsLeft.setText(String.valueOf(GameData.chipsLeft));
         
@@ -91,6 +92,7 @@ public class InventoryPanel extends JPanel
         setSuctionBoot(forceBoot > 0);
         setIceBoot(iceBoot > 0);
         setFlipperBoot(waterBoot > 0);
+
     }
     
     private void initComponents(){
@@ -112,12 +114,15 @@ public class InventoryPanel extends JPanel
         lblTime = new JLabel("TIME (s)");
         lblTime.setFont(new Font("Tahoma", 0, 36)); // NOI18N
         lblTime.setForeground(new Color(255, 0, 0));
+
         lblTime.setText("TIME (s)");
         
         txtTime = new JTextField(String.valueOf(GameData.time));
+
         txtTime.setFont(new Font("Tahoma", 0, 36));
         txtTime.setHorizontalAlignment(JTextField.CENTER);
         txtTime.setEditable(false);
+
 
         
         lblChipsLeft = new JLabel("CHIPS LEFT");
@@ -126,9 +131,11 @@ public class InventoryPanel extends JPanel
         
         txtChipsLeft = new JTextField(String.valueOf(GameData.chipsLeft));
         txtChipsLeft.setText(String.valueOf(GameData.chipsLeft));
+
         txtChipsLeft.setFont(new Font("Tahoma", 0, 36));
         txtChipsLeft.setHorizontalAlignment(JTextField.CENTER);
         txtChipsLeft.setEditable(false);
+
 
         // Boots label
         lblBoots = new JLabel("BOOTS");
@@ -179,6 +186,7 @@ public class InventoryPanel extends JPanel
         keyPanel.add(lblRedKey);
         keyPanel.add(lblYellowKey);
         keyPanel.add(lblGreenKey);
+
 
         GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);

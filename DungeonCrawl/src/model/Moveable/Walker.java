@@ -17,6 +17,7 @@ public class Walker extends Monster {
         super(x, y);
     }
 
+
     @Override
     public void render(Graphics2D g) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -35,4 +36,5 @@ public class Walker extends Monster {
     public void update() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }
