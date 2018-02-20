@@ -63,8 +63,10 @@ public class Animator implements Runnable {
                 //GameData.gamer.collide(object);
                 object.collide(GameData.gamer);
             }
-            else if(object instanceof Button){
+            else{ 
+                if(object instanceof Button){
                     ((Button) object).pressed = false;
+                }
                 }
             for(GameObject go: GameData.gameObjects){
                 if(object != go && object.getCollisionBox().intersects(

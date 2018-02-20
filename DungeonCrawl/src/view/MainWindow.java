@@ -7,7 +7,6 @@ package view;
 
 import DungeonCrawl.DungeonCrawl;
 import controller.KeyController;
-import java.awt.Color;
 import javax.swing.GroupLayout;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
@@ -29,10 +28,6 @@ public class MainWindow extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
         JLayeredPane jLayeredPane1 = new JLayeredPane();
-        
-        // Inventory Panel layout section
-        GroupLayout inventoryPanelLayout = new GroupLayout(DungeonCrawl.inventoryPanel);
-        
         
         GroupLayout gamePanelLayout = new GroupLayout(DungeonCrawl.gamePanel);
         DungeonCrawl.gamePanel.setLayout(gamePanelLayout);
@@ -87,8 +82,6 @@ public class MainWindow extends JFrame {
                     .addComponent(jLayeredPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
-        
-        
 
         pack();
     }
