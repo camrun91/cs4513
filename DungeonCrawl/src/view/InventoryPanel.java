@@ -103,6 +103,7 @@ public class InventoryPanel extends JPanel
         txtLevel.setFont(new Font("Tahoma", 0, 36));
         txtLevel.setHorizontalAlignment(JTextField.CENTER);
         txtLevel.setEditable(false);
+        txtLevel.setFocusable(false);
         
         // Time label and text field
         lblTime = new JLabel("TIME (s)");
@@ -114,7 +115,7 @@ public class InventoryPanel extends JPanel
         txtTime.setFont(new Font("Tahoma", 0, 36));
         txtTime.setHorizontalAlignment(JTextField.CENTER);
         txtTime.setEditable(false);
-
+        txtTime.setFocusable(false);
         
         lblChipsLeft = new JLabel("CHIPS LEFT");
         lblChipsLeft.setFont(new Font("Tahoma", 0, 36)); // NOI18N
@@ -125,6 +126,7 @@ public class InventoryPanel extends JPanel
         txtChipsLeft.setFont(new Font("Tahoma", 0, 36));
         txtChipsLeft.setHorizontalAlignment(JTextField.CENTER);
         txtChipsLeft.setEditable(false);
+        txtChipsLeft.setFocusable(false);
 
         // Boots label
         lblBoots = new JLabel("BOOTS");
