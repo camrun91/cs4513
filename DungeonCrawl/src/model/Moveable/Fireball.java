@@ -92,19 +92,19 @@ public class Fireball extends Monster {
                 counter = 0;
                 switch (direction) {
                     case LEFT:
-
                         super.x -= MOVEMENT;
-                        fireballMoves.setFrames(fireballSprites);
-
                         break;
                     case RIGHT:
-
                         super.x += MOVEMENT;
-                        fireballMoves.setFrames(fireballSprites);
-
+                        break;
+                    case UP:
+                        super.y -= MOVEMENT;
+                        break;
+                    case DOWN:
+                        super.y += MOVEMENT;
                         break;
                 }
-            } else {
+            }else {
                 counter += 100;
             }
         }else if (GameData.currentLevel.getLevelValue() == 3) {
