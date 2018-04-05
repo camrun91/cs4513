@@ -247,7 +247,7 @@ public final class LevelTwo extends Level {
 
     @Override
     public void setLevelTime() {
-        super.levelTime = 3600;
+        super.levelTime = 300;
     }
 
     @Override
