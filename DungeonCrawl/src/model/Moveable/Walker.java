@@ -113,6 +113,6 @@ public class Walker extends Monster {
          if(O instanceof Wall || O instanceof FakeWall){
             this.noMove();
             this.changeDirection();
-         }
-     }
+        }
+    }
 }

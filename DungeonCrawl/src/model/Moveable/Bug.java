@@ -7,9 +7,7 @@ import java.awt.image.BufferedImage;
 import model.Direction;
 import model.GameObject;
 import model.Immoveable.Tile.FakeWall;
-import model.Immoveable.Tile.Fire;
 import model.Immoveable.Tile.Wall;
-import model.Immoveable.Tile.Water;
 
 public class Bug extends Monster {
     public BufferedImage[] Bug_S;
@@ -49,10 +47,6 @@ public class Bug extends Monster {
     public void render(Graphics2D g) {
         g.drawImage(bugMoves.getImage(),(int) super.x, (int) super.y, (int) HEIGHT, (int) WIDTH,
                 null);
-        
-        //Draw Collision Box
-        //g.setColor(Color.yellow);
-        //g.draw(this.getCollisionBox());
     }
 
     @Override

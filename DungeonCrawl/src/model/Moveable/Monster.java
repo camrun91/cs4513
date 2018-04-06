@@ -12,7 +12,6 @@ public abstract class Monster extends MoveableObject implements Collidable, Clon
 
     public Monster(float x, float y) {
         super(x, y);
-
     }
 
     @Override

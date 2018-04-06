@@ -2,14 +2,11 @@ package model.Moveable;
 
 import controller.ImageFinder;
 import controller.ObjectAnimator;
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import model.Direction;
 import model.GameObject;
 import model.Immoveable.Tile.FakeWall;
-import model.Immoveable.Tile.Ice;
-import model.Level;
 import model.Immoveable.Tile.Wall;
 
 public class Glider extends Monster {
@@ -51,10 +48,6 @@ public class Glider extends Monster {
     public void render(Graphics2D g) {
         g.drawImage(gliderMoves.getImage(), (int) super.x, (int) super.y, (int) HEIGHT, (int) WIDTH,
                 null);
-
-        //Draw Collision Box
-        //g.setColor(Color.blue);
-        //g.draw(this.getCollisionBox());
     }
 
     @Override

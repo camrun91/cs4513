@@ -8,7 +8,6 @@ public interface GameObject {
     public static int OFFSET = 32;
     public static int MOVEMENT = 32;
 
-    
     public abstract void render(Graphics2D g);
     
     public abstract void update();

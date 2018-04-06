@@ -21,19 +21,13 @@ public class Chip extends Collectible implements Collidable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    ;
+    };
 
     @Override
     public void render(Graphics2D g) {
         if (this.isAlive() && this.isDisplayed) {
             g.drawImage(chip, (int) super.x, (int) super.y, (int) super.WIDTH, (int) super.HEIGHT, null);
         }
-
-        //Draw Collision Box
-        //g.setColor(Color.blue);
-        //g.draw(this.getCollisionBox());
     }
 
     @Override

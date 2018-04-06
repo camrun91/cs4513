@@ -23,7 +23,6 @@ public class BannerPanel extends JPanel {
         BannerPanel.pwidth = pwidth;
         BannerPanel.pheight = pheight;
         
-
         initComponents();
     }
 

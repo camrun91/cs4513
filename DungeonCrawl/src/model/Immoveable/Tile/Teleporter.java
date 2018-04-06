@@ -7,9 +7,7 @@ import model.GameData;
 import model.GameObject;
 import DungeonCrawl.DungeonCrawl;
 import java.util.ArrayList;
-import java.util.Set;
 import model.Collidable;
-import model.Moveable.Gamer;
 
 public class Teleporter extends Tile implements Collidable {
 

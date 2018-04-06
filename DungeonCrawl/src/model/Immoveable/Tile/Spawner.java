@@ -38,10 +38,6 @@ public class Spawner extends Wall implements Collidable{
     @Override
     public void render(Graphics2D g) {
         g.drawImage(spawnerImage, (int)super.x, (int)super.y, (int)WIDTH, (int)HEIGHT, null);
-        
-        //Draw Collision Box
-        //g.setColor(Color.blue);
-        //g.draw(this.getCollisionBox());
     }
 
     public void spawn() {

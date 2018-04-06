@@ -1,7 +1,6 @@
 package model.Moveable;
 
 import controller.ImageFinder;
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import model.Collidable;
@@ -28,11 +27,7 @@ public class Block extends MoveableObject implements Collidable{
     @Override
     public void render(Graphics2D g) {
         if (this.isAlive()) {
-            g.drawImage(blockImg, (int) super.x, (int) super.y, (int) WIDTH, (int) HEIGHT, null);
-
-            //Draw Collision Box
-            //g.setColor(Color.blue);
-            //g.draw(this.getCollisionBox());        
+            g.drawImage(blockImg, (int) super.x, (int) super.y, (int) WIDTH, (int) HEIGHT, null);    
         }
     }
 

@@ -1,3 +1,9 @@
+/*
+* Methods ChangeNodeContents, GetNodeContents and ShortestPath are adapted from 
+* Mazesolver example: https://www.codeproject.com/Articles/9040/Maze-Solver-shortest-path-finder
+* on 3/17/2018.
+*/
+
 package model.Moveable;
 
 import controller.ImageFinder;
@@ -48,9 +54,6 @@ public class Frog extends Monster {
         loadImages();
         g.drawImage(frogMoves.getImage(), (int) super.x, (int) super.y, (int) Monster.WIDTH, (int) Monster.HEIGHT,
                 null);
-        //Draw Collision Box
-        //g.setColor(Color.blue);
-        //g.draw(this.getCollisionBox());
     }
 
     @Override
@@ -295,7 +298,6 @@ public class Frog extends Monster {
                 }
             }
         }
-
         //no path exists
         return null;
     }

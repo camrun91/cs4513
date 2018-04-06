@@ -8,7 +8,6 @@ import java.awt.image.BufferedImage;
 import model.GameObject;
 import model.Immoveable.Tile.FakeWall;
 import model.Immoveable.Tile.Fire;
-import model.Immoveable.Tile.Trap;
 import model.Immoveable.Tile.Wall;
 import model.Immoveable.Tile.Water;
 
@@ -51,9 +50,6 @@ public class Tank extends Monster {
     public void render(Graphics2D g) {
         g.drawImage(tankMoves.getImage(), (int) super.x, (int) super.y, (int) HEIGHT, (int) WIDTH,
                 null);
-        //Draw Collision Box
-        //g.setColor(Color.blue);
-        //g.draw(this.getCollisionBox());
     }
 
     @Override
@@ -117,6 +113,5 @@ public class Tank extends Monster {
         if(O instanceof Wall || O instanceof FakeWall){
             this.noMove();
         }
-
     }
 }

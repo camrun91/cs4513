@@ -91,10 +91,5 @@ public class Water extends Tile implements Collidable{
     @Override
     public void render(Graphics2D g) {
         g.drawImage(image, (int) super.x, (int) super.y, (int) super.WIDTH, (int) super.HEIGHT, null);
-
-        //Draw Collision Box
-        //g.setColor(Color.blue);
-        //g.draw(this.getCollisionBox());
     }
-
 }

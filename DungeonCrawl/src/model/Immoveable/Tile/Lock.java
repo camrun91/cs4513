@@ -3,7 +3,6 @@ package model.Immoveable.Tile;
 import controller.ImageFinder;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.awt.Color;
 import model.Collidable;
 import model.GameData;
 import model.GameObject;
@@ -65,10 +64,6 @@ public class Lock extends Wall implements Collidable {
                     image = lockImg[3];
             }
             g.drawImage(image, (int) super.x, (int) super.y, (int) super.WIDTH, (int) super.HEIGHT, null);
-
-            //Draw Collision Box
-            //g.setColor(Color.blue);
-            //g.draw(this.getCollisionBox());
         }
     }
 

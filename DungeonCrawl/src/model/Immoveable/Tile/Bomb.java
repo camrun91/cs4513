@@ -9,12 +9,9 @@ import model.Collidable;
 import model.GameData;
 import model.GameObject;
 import model.Immoveable.Collectible.Boot;
-import model.Moveable.Ball;
 import model.Moveable.Block;
-import model.Moveable.Fireball;
 import model.Moveable.Gamer;
 import model.Moveable.Monster;
-import model.Moveable.Tank;
 
 public class Bomb extends Tile implements Collidable {
 
@@ -76,10 +73,6 @@ public class Bomb extends Tile implements Collidable {
     @Override
     public void render(Graphics2D g) {
         g.drawImage(image, (int) super.x, (int) super.y, (int) super.WIDTH, (int) super.HEIGHT, null);
-
-        //Draw Collision Box
-        //g.setColor(Color.blue);
-        //g.draw(this.getCollisionBox());
     }
 
 }

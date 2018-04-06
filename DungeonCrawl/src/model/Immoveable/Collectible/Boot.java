@@ -1,7 +1,6 @@
 package model.Immoveable.Collectible;
 
 import controller.ImageFinder;
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import model.BootType;
@@ -55,10 +54,6 @@ public class Boot extends Collectible implements Collidable{
                     image = bootImg[3];
             }
             g.drawImage(image, (int)super.x, (int)super.y, (int)super.WIDTH, (int)super.HEIGHT, null);
-            
-            //Draw Collision Box
-            //g.setColor(Color.blue);
-            //g.draw(this.getCollisionBox());
         }
     }
     @Override
@@ -66,6 +61,6 @@ public class Boot extends Collectible implements Collidable{
          if(O instanceof Gamer){
              this.isDisplayed = false;
              GameData.gamerInventory.add(this);
-         }
+        }
     }
 }

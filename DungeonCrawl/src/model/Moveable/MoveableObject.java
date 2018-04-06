@@ -59,20 +59,20 @@ public abstract class MoveableObject implements GameObject {
             direction = moving;
         }
         else{
-        switch(d){
-            case RIGHT:                
-                this.x += MOVEMENT;
-                break;
-            case LEFT:
-                this.x -= MOVEMENT;
-                break;
-            case UP:
-                this.y -= MOVEMENT;
-                break;
-            case DOWN:
-                this.y += MOVEMENT;
-                break;
-        }
+            switch(d){
+                case RIGHT:                
+                    this.x += MOVEMENT;
+                    break;
+                case LEFT:
+                    this.x -= MOVEMENT;
+                    break;
+                case UP:
+                    this.y -= MOVEMENT;
+                    break;
+                case DOWN:
+                    this.y += MOVEMENT;
+                    break;
+            }
         }
         sliding(false);
     }
@@ -101,6 +101,5 @@ public abstract class MoveableObject implements GameObject {
                 .anyMatch((o) -> (
                         nextMove.intersects(
                                 o.getCollisionBox())));
-        
     }
 }

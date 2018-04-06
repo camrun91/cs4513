@@ -10,7 +10,6 @@ import model.GameData;
 import model.GameObject;
 import model.Immoveable.Collectible.Boot;
 import model.Moveable.Gamer;
-import model.Moveable.Glider;
 import model.Moveable.MoveableObject;
 
 public class Ice extends Tile implements Collidable {
@@ -151,5 +150,4 @@ public class Ice extends Tile implements Collidable {
         } catch (Exception e) {
         }
     }
-
 }

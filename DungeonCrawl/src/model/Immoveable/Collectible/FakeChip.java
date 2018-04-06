@@ -1,10 +1,8 @@
 package model.Immoveable.Collectible;
 
-import DungeonCrawl.DungeonCrawl;
 import controller.ImageFinder;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import model.BootType;
 import model.Collidable;
 import model.GameData;
 import model.GameObject;
@@ -64,5 +62,4 @@ public class FakeChip extends Collectible implements Collidable{
             }
         }
     }
-    
 }

@@ -4,7 +4,6 @@ import DungeonCrawl.DungeonCrawl;
 import model.Collidable;
 import model.GameData;
 import model.GameObject;
-import model.Moveable.MoveableObject;
 
 public class Animator implements Runnable {
 
@@ -51,9 +50,7 @@ public class Animator implements Runnable {
                 for (GameObject go : GameData.gameObjects) {
                     if (object != go && object.getCollisionBox().intersects(
                             go.getCollisionBox())) {
-                        //System.out.println(object.getClass() + " " + go.getClass());
                         ((Collidable)object).collide(go);
-                        //go.collide(object);
                     }
                 }
             }

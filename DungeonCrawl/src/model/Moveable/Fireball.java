@@ -10,7 +10,6 @@ import model.GameData;
 import model.GameObject;
 import model.Immoveable.Tile.FakeWall;
 import model.Immoveable.Tile.Wall;
-import model.Level;
 
 public class Fireball extends Monster {
 
@@ -32,7 +31,6 @@ public class Fireball extends Monster {
             fireballSprites[0] = image;
         } catch (Exception e) {
         }
-
     }
 
     @Override

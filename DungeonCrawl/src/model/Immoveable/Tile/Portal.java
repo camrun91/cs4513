@@ -7,7 +7,6 @@ import model.GameData;
 import model.GameObject;
 import DungeonCrawl.DungeonCrawl;
 import model.Collidable;
-import model.Moveable.Gamer;
 
 public class Portal extends Tile implements Collidable {
 
