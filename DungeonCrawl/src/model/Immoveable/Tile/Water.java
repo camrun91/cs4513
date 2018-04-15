@@ -29,7 +29,7 @@ public class Water extends Tile implements Collidable{
         } catch (Exception e) {
         }
     }
-
+    
     @Override
     public void collide(GameObject O) {
         if (O instanceof Gamer) {
@@ -54,9 +54,10 @@ public class Water extends Tile implements Collidable{
         }
         //Collide with Block
         if(O instanceof Block)
-        {
-            this.setAlive(false);
+        {   this.setAlive(false);
+            GameData.spawn(new Dirt(this.x/OFFSET,this.y/OFFSET));
             ((Block)O).setAlive(false);
+            
         }
         //Collide with Ball
         if(O instanceof Ball){

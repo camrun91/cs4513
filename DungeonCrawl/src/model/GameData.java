@@ -16,7 +16,7 @@ public class GameData {
     public static final int MAP_HEIGHT = 27;
     public static List<GameObject> gameObjects;
     public static List<GameObject> gamerInventory;
-    public static ArrayList<Monster> spawnMonsters = new ArrayList<>();
+    public static ArrayList<GameObject> spawnObjects = new ArrayList<>();
 
     public static Map<LevelNumber, Level> gameLevels;
     public static Level currentLevel;
@@ -39,7 +39,7 @@ public class GameData {
         gameLevels.put(LevelNumber.LEVELTWO, new LevelTwo());
         gameLevels.put(LevelNumber.LEVELTHREE, new LevelThree());
         
-        currentLevel = gameLevels.get(LevelNumber.LEVELONE);
+        currentLevel = gameLevels.get(LevelNumber.LEVELTHREE);
 
         resetGameData();
     }
@@ -86,8 +86,8 @@ public class GameData {
                 }
             }
             
-            gameObjects.addAll(spawnMonsters);
-            spawnMonsters.clear(); 
+            gameObjects.addAll(spawnObjects);
+            spawnObjects.clear(); 
 
             synchronized (gameObjects) {
                 for (GameObject object : gameObjects) {
@@ -147,7 +147,7 @@ public class GameData {
         }
     }
 
-    public static void spawn(Monster monster) {
-        spawnMonsters.add(monster);
+    public static void spawn(GameObject monster) {
+        spawnObjects.add(monster);
     }
 }

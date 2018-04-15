@@ -19,10 +19,10 @@ public class Dirt extends Tile implements Collidable {
 
     public Dirt(float x, float y) {
         super(x, y);
-
         try {
             image = (BufferedImage) ImageFinder.getImage("ImagesFolder", "Dirt.png");
         } catch (Exception e) {
+            System.out.println("Error in Dirt" + e.getMessage());
         }
     }
 
@@ -38,12 +38,13 @@ public class Dirt extends Tile implements Collidable {
         }
         //Collide with Ball
         if (O instanceof Ball) {
-            
+            ((Ball) O).noMove();
             ((Ball) O).turnAround();
         }
         //Collide with Fireball
         if (O instanceof Fireball) {
-            ((Fireball) O).setAlive(false);
+            ((Fireball) O).noMove();
+            ((Fireball) O).turn(((Fireball) O).direction.turnCW());
         }
         //Collision with Bug
         if (O instanceof Bug) {
@@ -52,15 +53,16 @@ public class Dirt extends Tile implements Collidable {
         }
         if (O instanceof Tank) {
             ((Tank) O).noMove();
-            ((Tank) O).setAlive(false);
+            ((Tank) O).direction = ((Tank) O).direction.turnCW();
 
-            image = (BufferedImage) ImageFinder.getImage("ImagesFolder", "Chip_Drowned.png");
+
         }
         if (O instanceof Walker) {
             ((Walker) O).noMove();
-            ((Walker) O).setAlive(false);
+            ((Walker) O).changeDirection();
 
-            image = (BufferedImage) ImageFinder.getImage("ImagesFolder", "Chip_Drowned.png");
+
+            
         }
     }
 
