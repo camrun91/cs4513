@@ -11,20 +11,16 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import model.ButtonType;
-import model.GameData;
+import model.Collidable;
 import model.GameObject;
-import model.Moveable.Gamer;
 import model.Moveable.Tank;
 
-/**
- *
- * @author russe_000
- */
-public class Button extends Tile {
+public class Button extends Tile implements Collidable {
+
     public BufferedImage image;
     ArrayList<GameObject> onButton = new ArrayList<>();
     ArrayList<GameObject> prevOnButton = new ArrayList<>();
-    
+
     ButtonType type;
     ArrayList<GameObject> associatedObjects = new ArrayList<GameObject>();
 
@@ -34,9 +30,9 @@ public class Button extends Tile {
     public Button(float x, float y, ButtonType type, ArrayList<GameObject> associatedObjects) {
         super(x, y);
         this.type = type;
-        
+
         this.associatedObjects.addAll(associatedObjects);
-        
+
         showImages();
     }
 
@@ -47,13 +43,13 @@ public class Button extends Tile {
             BufferedImage image = (BufferedImage) ImageFinder.getImage("ImagesFolder", "Green_Button.png");
             buttonImgs[0] = image;
 
-            image = (BufferedImage)ImageFinder.getImage("ImagesFolder", "Red_Button.png");
+            image = (BufferedImage) ImageFinder.getImage("ImagesFolder", "Red_Button.png");
             buttonImgs[1] = image;
-            
-            image = (BufferedImage)ImageFinder.getImage("ImagesFolder", "Blue_Button.png");
+
+            image = (BufferedImage) ImageFinder.getImage("ImagesFolder", "Blue_Button.png");
             buttonImgs[2] = image;
-            
-            image = (BufferedImage)ImageFinder.getImage("ImagesFolder", "Brown_Button.png");
+
+            image = (BufferedImage) ImageFinder.getImage("ImagesFolder", "Brown_Button.png");
             buttonImgs[3] = image;
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,7 +57,7 @@ public class Button extends Tile {
     }
 
     @Override
-    public void render(Graphics2D g) {  
+    public void render(Graphics2D g) {
         BufferedImage image;
         switch (type) {
             case GREEN:
@@ -75,44 +71,42 @@ public class Button extends Tile {
                 break;
             default:
                 image = buttonImgs[3];
-            }
+        }
         g.drawImage(image, (int) super.x, (int) super.y, (int) super.WIDTH, (int) super.HEIGHT, null);
 
         //Draw Collision Box
         g.setColor(Color.blue);
         g.draw(this.getCollisionBox());
     }
-    
-    public ButtonType getType(){
+
+    public ButtonType getType() {
         return type;
     }
-    
+
     @Override
-    public void collide(GameObject O){
+    public void collide(GameObject O) {
         onButton.add(O);
-        if(!(prevOnButton.contains(O))){        
-            if(type == ButtonType.GREEN){
-                this.associatedObjects.forEach((o)-> setObject(o));
-            } 
-            else if(type == ButtonType.BLUE) {
-                this.associatedObjects.forEach((o)-> setObject(o));
-            }
-        }    
+        if (!(prevOnButton.contains(O))) {
+            this.associatedObjects.forEach((o) -> setObject(o));
+        }
     }
-    
+
     @Override
-    public void update(){
+    public void update() {
         prevOnButton.clear();
         prevOnButton.addAll(onButton);
         onButton.clear();
     }
 
-    public void setObject(GameObject object){
-        if(object instanceof ToggleWall){
+    public void setObject(GameObject object) {
+        if (object instanceof ToggleWall) {
             ((ToggleWall) object).setOpen(!((ToggleWall) object).isOpen());
-        } 
-        else if(object instanceof Tank) {
+        } else if (object instanceof Trap) {
+            ((Trap) object).release();
+        } else if (object instanceof Tank) {
             ((Tank) object).direction = ((Tank) object).direction.getOppositeDirection();
-        }
+        } else if (object instanceof Spawner) {
+            ((Spawner)object).spawn();
+        } 
     }
 }

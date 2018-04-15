@@ -2,18 +2,14 @@ package model.Immoveable.Collectible;
 
 import model.LockType;
 import controller.ImageFinder;
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import model.Collidable;
 import model.GameData;
 import model.GameObject;
 import model.Moveable.Gamer;
 
-
-
-public class Key extends Collectible {
-    private final int width = 32;
-    private final int height = 32;
+public class Key extends Collectible implements Collidable {
     public LockType type;    
     public BufferedImage[] keyImg;
     
@@ -58,11 +54,7 @@ public class Key extends Collectible {
                     image = keyImg[3];
             }
             g.drawImage(image, (int)super.x, (int)super.y, (int)super.WIDTH, (int)super.HEIGHT, null);
-            
-            //Draw Collision Box
-            //g.setColor(Color.blue);
-            //g.draw(this.getCollisionBox());
-        }
+            }
     };
 
     @Override
@@ -70,6 +62,6 @@ public class Key extends Collectible {
          if(O instanceof Gamer){
             GameData.gamerInventory.add(this);
             this.isDisplayed = false;
-         }
+        }
     }
 }

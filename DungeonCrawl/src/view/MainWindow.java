@@ -27,6 +27,7 @@ public class MainWindow extends JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
                 .addContainerGap(218, Short.MAX_VALUE)
                 .addComponent(DungeonCrawl.bannerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DungeonCrawl.menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73))
         );
         gamePanelLayout.setVerticalGroup(
@@ -34,6 +35,7 @@ public class MainWindow extends JFrame {
             .addGroup(gamePanelLayout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(DungeonCrawl.bannerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DungeonCrawl.menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(132, Short.MAX_VALUE))
         );
         
@@ -73,7 +75,7 @@ public class MainWindow extends JFrame {
                     .addComponent(jLayeredPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
-        
+
         pack();
     }
 }

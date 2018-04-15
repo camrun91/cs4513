@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.Immoveable.Tile;
 
 import DungeonCrawl.DungeonCrawl;
@@ -10,17 +5,19 @@ import controller.ImageFinder;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import model.BootType;
+import model.Collidable;
 import model.GameData;
 import model.GameObject;
 import model.Immoveable.Collectible.Boot;
 import model.Moveable.Ball;
+import model.Moveable.Bug;
+import model.Moveable.Fireball;
 import model.Moveable.Gamer;
+import model.Moveable.Glider;
+import model.Moveable.Walker;
+import model.Moveable.MoveableObject;
 
-/**
- *
- * @author russe_000
- */
-public class Fire extends Tile {
+public class Fire extends Tile implements Collidable {
 
     public BufferedImage image;
 
@@ -50,22 +47,34 @@ public class Fire extends Tile {
                 image = (BufferedImage) ImageFinder.getImage("ImagesFolder", "Chip_In_Fire.png");
                 //TODO Remove the Gamer so That you can see the burned image. JL 2/19
                 DungeonCrawl.bannerPanel.setBannerText("You burned on Level  " + GameData.currentLevel.getLevelValue());
-                GameData.levelInProgress = false;
+                ((Gamer) O).setAlive(false);
             }
-        }
-                //Collide with Ball
-        if(O instanceof Ball){
-            ((Ball) O).noMove();
+        } else if (O instanceof MoveableObject) {
+            ((MoveableObject) O).noMove();
+            //Collide with Ball
+            if (O instanceof Ball) {
+                ((Ball) O).turnAround();
+            }
+            //Collide with Fireball
+            if (O instanceof Fireball) {               
+                ((Fireball) O).turn(((Fireball) O).direction.getOppositeDirection());
+            }
+            //Collision with Bug
+            if(O instanceof Bug){                
+                ((Bug) O).turn(((Bug) O).direction.getOppositeDirection());
+            }
+            if (O instanceof Walker) {
+                ((Walker) O).turnAround();
+            }
+            if (O instanceof Glider) {
+                ((Glider) O).turn(((Glider) O).direction.getOppositeDirection());
+            }
         }
     }
 
     @Override
     public void render(Graphics2D g) {
         g.drawImage(image, (int) super.x, (int) super.y, (int) super.WIDTH, (int) super.HEIGHT, null);
-
-        //Draw Collision Box
-        //g.setColor(Color.blue);
-        //g.draw(this.getCollisionBox());
     }
 
 }

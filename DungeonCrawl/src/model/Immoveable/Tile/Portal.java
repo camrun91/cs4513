@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.Immoveable.Tile;
 
 import controller.ImageFinder;
@@ -11,12 +6,9 @@ import java.awt.image.BufferedImage;
 import model.GameData;
 import model.GameObject;
 import DungeonCrawl.DungeonCrawl;
+import model.Collidable;
 
-/**
- *
- * @author russe_000
- */
-public class Portal extends Tile {
+public class Portal extends Tile implements Collidable {
 
     public BufferedImage portalImg;
     
@@ -43,7 +35,7 @@ public class Portal extends Tile {
 
     @Override
     public void collide(GameObject O) {
-        if(GameData.chipsLeft == 0){
+        if(GameData.chipsLeft == 0 && O.equals(GameData.gamer)){
             // Need to display banner explaining level is complete
             DungeonCrawl.bannerPanel.setBannerText("You Completed Level " + GameData.currentLevel.getLevelValue());
             GameData.goToNextLevel();

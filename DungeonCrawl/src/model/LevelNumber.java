@@ -1,5 +1,5 @@
 package model;
 
 public enum LevelNumber {
-    LEVELONE, LEVELTWO
+    LEVELONE, LEVELTWO, LEVELTHREE, LEVELFOUR
 }

@@ -1,23 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import DungeonCrawl.DungeonCrawl;
-import java.util.ArrayList;
+import model.Collidable;
 import model.GameData;
-import static model.GameData.gameObjects;
-import static model.GameData.gamerInventory;
-import static model.GameData.killedMonsters;
 import model.GameObject;
-import model.Immoveable.Tile.Button;
 
-/**
- *
- * @author russe_000
- */
 public class Animator implements Runnable {
 
     public boolean running;
@@ -26,17 +13,19 @@ public class Animator implements Runnable {
     @Override
     public void run() {
         running = true;
-
+        
         while (running && GameData.time > 0) {
             long startTime = System.currentTimeMillis();
 
-            if (GameData.levelInProgress) {
+            if (GameData.levelInProgress && !GameData.paused) {
                 DungeonCrawl.gameData.update();
                 processCollisions();
                 DungeonCrawl.gamePanel.gameRender();
                 DungeonCrawl.gamePanel.printScreen();
                 DungeonCrawl.inventoryPanel.updateInventoryPanel();
-            } else {
+            }else if(GameData.paused == true)
+                    DungeonCrawl.menuPanel.setVisible(true);
+            else {
                 DungeonCrawl.bannerPanel.setVisible(true);
                 DungeonCrawl.gamePanel.requestFocus();
             }
@@ -57,13 +46,14 @@ public class Animator implements Runnable {
 
     private void processCollisions() {
         for (GameObject object : GameData.gameObjects) {
-            for (GameObject go : GameData.gameObjects) {
-                if (object != go && object.getCollisionBox().intersects(
-                        go.getCollisionBox())) {
-                    //System.out.println(object.getClass() + " " + go.getClass());
-                    object.collide(go);
+            if (object instanceof Collidable) {
+                for (GameObject go : GameData.gameObjects) {
+                    if (object != go && object.getCollisionBox().intersects(
+                            go.getCollisionBox())) {
+                        ((Collidable)object).collide(go);
+                    }
                 }
-            }            
-        }                                
+            }
+        }
     }
 }

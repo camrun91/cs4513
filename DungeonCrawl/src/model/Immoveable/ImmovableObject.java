@@ -32,8 +32,4 @@ public abstract class ImmovableObject implements GameObject {
     
     @Override
     public void update(){}    
-    
-    @Override
-    public void slide(){   }
-    
 }
